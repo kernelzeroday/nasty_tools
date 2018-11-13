@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -n "mime-type: "; read type; mkdir /tmp/$type find / -print0 | xargs -0 file | grep "$type" |  while read f; do cp -v "$f" /tmp/$type; done
